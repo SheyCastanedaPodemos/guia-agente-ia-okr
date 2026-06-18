@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guía del Agente IA — Diseñador de Objetivos y KRs</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    font-size: 15px;
+    line-height: 1.65;
+    color: #1a1a1a;
+    background: #f5f5f3;
+    min-height: 100vh;
+  }
+
+  .hero {
+    background: #1A3C2E;
+    color: #ffffff;
+    padding: 2.5rem 2rem 2rem;
+  }
+  .hero-tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.12);
+    color: #9FE1CB;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-bottom: 1rem;
+  }
+  .hero h1 {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.3;
+    margin-bottom: 0.75rem;
+    color: #fff;
+  }
+  .hero p {
+    font-size: 14px;
+    color: rgba(255,255,255,0.7);
+    max-width: 560px;
+    line-height: 1.6;
+  }
+  .hero-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 1.5rem;
+    background: #1D9E75;
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: background 0.15s;
+  }
+  .hero-btn:hover { background: #0F6E56; }
+
+  .main { max-width: 720px; margin: 0 auto; padding: 2rem 1.5rem 3rem; }
+
+  .section { margin-bottom: 2.5rem; }
+  .section-label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #0F6E56;
+    margin-bottom: 0.75rem;
+  }
+  .section h2 {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    color: #1a1a1a;
+  }
+
+  .prereq-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  @media (max-width: 520px) { .prereq-grid { grid-template-columns: 1fr; } }
+
+  .prereq-card {
+    background: #E1F5EE;
+    border: 0.5px solid #5DCAA5;
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+  }
+  .prereq-card .num {
+    font-size: 28px;
+    font-weight: 500;
+    color: #0F6E56;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+  .prereq-card .title {
+    font-size: 13px;
+    font-weight: 500;
+    color: #085041;
+    margin-bottom: 0.25rem;
+  }
+  .prereq-card .desc {
+    font-size: 13px;
+    color: #0F6E56;
+    line-height: 1.5;
+  }
+
+  .alert {
+    background: #FAEEDA;
+    border: 0.5px solid #FAC775;
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    margin-top: 0.75rem;
+    font-size: 13px;
+    color: #633806;
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+  }
+  .alert i { margin-top: 1px; flex-shrink: 0; color: #854F0B; }
+
+  .steps-list { list-style: none; display: flex; flex-direction: column; gap: 0; }
+  .step {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    padding: 1rem 0;
+    border-bottom: 0.5px solid #e8e8e4;
+  }
+  .step:last-child { border-bottom: none; }
+  .step-num {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #1A3C2E;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .step-body {}
+  .step-title { font-size: 14px; font-weight: 500; color: #1a1a1a; margin-bottom: 0.25rem; }
+  .step-desc { font-size: 13px; color: #555; line-height: 1.55; }
+  .step-ask {
+    margin-top: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    background: #f5f5f3;
+    border-left: 2px solid #1D9E75;
+    border-radius: 0 6px 6px 0;
+    font-size: 12px;
+    color: #444;
+    font-style: italic;
+  }
+
+  .prompts-intro {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 1.25rem;
+    line-height: 1.6;
+  }
+  .prompt-cards { display: flex; flex-direction: column; gap: 12px; }
+  .prompt-card {
+    background: #fff;
+    border: 0.5px solid #d8d8d4;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: border-color 0.15s;
+  }
+  .prompt-card:hover { border-color: #5DCAA5; }
+
+  .prompt-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+    user-select: none;
+  }
+  .prompt-tag-wrap { display: flex; align-items: center; gap: 10px; }
+  .prompt-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: #E1F5EE;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .prompt-icon i { color: #0F6E56; font-size: 16px; }
+  .prompt-title { font-size: 14px; font-weight: 500; color: #1a1a1a; }
+  .prompt-chevron { color: #999; font-size: 16px; transition: transform 0.2s; }
+  .prompt-card.open .prompt-chevron { transform: rotate(180deg); }
+
+  .prompt-body {
+    display: none;
+    padding: 0 1rem 1rem;
+  }
+  .prompt-card.open .prompt-body { display: block; }
+
+  .prompt-text-box {
+    background: #f7f7f5;
+    border: 0.5px solid #d8d8d4;
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    font-size: 13px;
+    color: #222;
+    line-height: 1.6;
+    position: relative;
+  }
+  .prompt-text-box .placeholder {
+    color: #1D9E75;
+    font-weight: 500;
+  }
+  .copy-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 0.75rem;
+    background: transparent;
+    border: 0.5px solid #c8c8c4;
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-size: 12px;
+    color: #555;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .copy-btn:hover { border-color: #1D9E75; color: #0F6E56; }
+  .copy-btn.copied { border-color: #1D9E75; color: #0F6E56; background: #E1F5EE; }
+  .copy-btn i { font-size: 14px; }
+
+  .tip-note {
+    font-size: 12px;
+    color: #888;
+    margin-top: 0.5rem;
+    font-style: italic;
+  }
+
+  .output-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 10px;
+  }
+  .output-item {
+    background: #fff;
+    border: 0.5px solid #d8d8d4;
+    border-radius: 8px;
+    padding: 0.875rem 1rem;
+  }
+  .output-icon { color: #1D9E75; font-size: 18px; margin-bottom: 0.4rem; }
+  .output-title { font-size: 13px; font-weight: 500; color: #1a1a1a; margin-bottom: 0.2rem; }
+  .output-desc { font-size: 12px; color: #777; line-height: 1.45; }
+
+  .rules-list { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-top: 0.75rem; }
+  .rule-item {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    font-size: 13px;
+    color: #444;
+  }
+  .rule-item i { color: #1D9E75; font-size: 15px; margin-top: 1px; flex-shrink: 0; }
+
+  .divider {
+    border: none;
+    border-top: 0.5px solid #e0e0da;
+    margin: 2rem 0;
+  }
+
+  .cta-section {
+    background: #1A3C2E;
+    border-radius: 12px;
+    padding: 1.75rem 1.5rem;
+    text-align: center;
+  }
+  .cta-section h2 { font-size: 18px; font-weight: 500; color: #fff; margin-bottom: 0.5rem; }
+  .cta-section p { font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 1.25rem; }
+  .cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #1D9E75;
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 11px 24px;
+    border-radius: 8px;
+    transition: background 0.15s;
+  }
+  .cta-btn:hover { background: #0F6E56; }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div style="max-width:720px; margin:0 auto;">
+    <div class="hero-tag">Herramienta de apoyo — Q3 2026</div>
+    <h1>Diseñador Estratégico de Objetivos y Resultados Clave</h1>
+    <p>Un agente de inteligencia artificial que te ayuda a construir, validar y afinar tus objetivos y Resultados Clave (KRs) para el nuevo modelo trimestral de Podemos Progresar.</p>
+    <a href="https://gemini.google.com/gem/1W7ICt3efe12XFaQRDFqCVti56BmkDe5j?usp=sharing" target="_blank" class="hero-btn">
+      <i class="ti ti-external-link" aria-hidden="true"></i>
+      Abrir el agente
+    </a>
+  </div>
+</div>
+
+<div class="main">
+
+  <div class="section">
+    <div class="section-label">Antes de empezar</div>
+    <h2>Ten esto listo antes de abrir el agente</h2>
+    <div class="prereq-grid">
+      <div class="prereq-card">
+        <div class="num">01</div>
+        <div class="title">El objetivo que te comunicó tu líder</div>
+        <div class="desc">El agente no puede construir tus objetivos sin saber a cuál meta de tu área o dirección debes contribuir. Pregúntale a tu líder antes de empezar.</div>
+      </div>
+      <div class="prereq-card">
+        <div class="num">02</div>
+        <div class="title">Tu puesto y área</div>
+        <div class="desc">El agente te preguntará tu puesto, dirección y área para entender el tipo de contribución que haces y ayudarte mejor.</div>
+      </div>
+    </div>
+    <div class="alert">
+      <i class="ti ti-alert-triangle" aria-hidden="true"></i>
+      <span>Si aún no tienes el objetivo de tu líder, puedes hacer un ejercicio de práctica. Solo indícaselo al agente y lo guiará en modo simulación.</span>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section">
+    <div class="section-label">Cómo funciona</div>
+    <h2>El agente trabaja contigo en pasos</h2>
+    <p style="font-size:14px;color:#555;margin-bottom:1rem;">No te entrega algo de golpe. Va haciendo preguntas para entender tu contexto antes de proponer cualquier redacción.</p>
+    <ul class="steps-list">
+      <li class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <div class="step-title">Entiende tu contexto</div>
+          <div class="step-desc">Te pide tu puesto, área y el objetivo que te comunicó tu líder. No avanza sin este punto de partida.</div>
+          <div class="step-ask">Pregunta típica: "¿Cuál es el objetivo de tu dirección o área al que debes contribuir este trimestre?"</div>
+        </div>
+      </li>
+      <li class="step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <div class="step-title">Identifica qué tipo de aportación haces</div>
+          <div class="step-desc">Hay cinco tipos: de negocio (crecimiento, eficiencia o transformación), de colaboración entre áreas, o de desarrollo personal. El agente te ayuda a identificar cuál aplica.</div>
+          <div class="step-ask">Pregunta típica: "¿Qué tipo de resultado quieres construir: de negocio, de colaboración o de desarrollo?"</div>
+        </div>
+      </li>
+      <li class="step">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <div class="step-title">Construye el objetivo contigo</div>
+          <div class="step-desc">Si lo que describes suena a actividad ("dar seguimiento a...", "apoyar en..."), el agente te lo señala y te ayuda a reformularlo como un resultado real.</div>
+          <div class="step-ask">Pregunta típica: "¿Qué resultado concreto esperas lograr al final del trimestre?"</div>
+        </div>
+      </li>
+      <li class="step">
+        <div class="step-num">4</div>
+        <div class="step-body">
+          <div class="step-title">Construye el Resultado Clave (KR)</div>
+          <div class="step-desc">Te ayuda a definir la métrica, la meta, el período y los rangos de clasificación: Sobresaliente, Esperado, Deficiente y Cero. Sin traslapes entre rangos.</div>
+          <div class="step-ask">Pregunta típica: "¿Cómo sabrías que lograste este objetivo al 25 de septiembre? ¿Qué se podría medir?"</div>
+        </div>
+      </li>
+      <li class="step">
+        <div class="step-num">5</div>
+        <div class="step-body">
+          <div class="step-title">Entrega el resultado validado</div>
+          <div class="step-desc">Al terminar recibes el objetivo, el Resultado Clave con rangos, la evaluación de calidad (metodología SMART) y observaciones de riesgo si las hay.</div>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section">
+    <div class="section-label">Por dónde empezar</div>
+    <h2>Elige tu situación y copia el mensaje</h2>
+    <p class="prompts-intro">Pega uno de estos mensajes al abrir el agente. Reemplaza los campos en <span style="color:#1D9E75;font-weight:500;">verde</span> con tu información real.</p>
+
+    <div class="prompt-cards">
+
+      <div class="prompt-card" id="p1">
+        <div class="prompt-header" onclick="toggleCard('p1')">
+          <div class="prompt-tag-wrap">
+            <div class="prompt-icon"><i class="ti ti-target" aria-hidden="true"></i></div>
+            <div class="prompt-title">Quiero construir un Resultado Clave desde cero</div>
+          </div>
+          <i class="ti ti-chevron-down prompt-chevron" aria-hidden="true"></i>
+        </div>
+        <div class="prompt-body">
+          <div class="prompt-text-box" id="t1">Quiero construir un Resultado Clave (KR) desde cero. Soy <span class="placeholder">[escribe tu puesto]</span> del área de <span class="placeholder">[escribe tu área y dirección]</span>. El objetivo que me comunicó mi líder es: <span class="placeholder">[escribe el objetivo exacto]</span>.</div>
+          <button class="copy-btn" onclick="copyPrompt('t1', this)">
+            <i class="ti ti-copy" aria-hidden="true"></i>
+            Copiar mensaje
+          </button>
+          <p class="tip-note">El agente te hará preguntas para entender tu contribución antes de proponer la redacción.</p>
+        </div>
+      </div>
+
+      <div class="prompt-card" id="p2">
+        <div class="prompt-header" onclick="toggleCard('p2')">
+          <div class="prompt-tag-wrap">
+            <div class="prompt-icon"><i class="ti ti-checklist" aria-hidden="true"></i></div>
+            <div class="prompt-title">Tengo un indicador y quiero validarlo</div>
+          </div>
+          <i class="ti ti-chevron-down prompt-chevron" aria-hidden="true"></i>
+        </div>
+        <div class="prompt-body">
+          <div class="prompt-text-box" id="t2">Tengo redactado este indicador y quiero saber si es un buen Resultado Clave: <span class="placeholder">[pega aquí tu indicador]</span>. Soy <span class="placeholder">[escribe tu puesto]</span> del área de <span class="placeholder">[escribe tu área]</span>. Mi objetivo del trimestre es: <span class="placeholder">[escribe el objetivo]</span>.</div>
+          <button class="copy-btn" onclick="copyPrompt('t2', this)">
+            <i class="ti ti-copy" aria-hidden="true"></i>
+            Copiar mensaje
+          </button>
+          <p class="tip-note">El agente evaluará si describe un resultado o una actividad, y te dirá cómo mejorarlo.</p>
+        </div>
+      </div>
+
+      <div class="prompt-card" id="p3">
+        <div class="prompt-header" onclick="toggleCard('p3')">
+          <div class="prompt-tag-wrap">
+            <div class="prompt-icon"><i class="ti ti-refresh" aria-hidden="true"></i></div>
+            <div class="prompt-title">Quiero convertir un indicador que ya usaba</div>
+          </div>
+          <i class="ti ti-chevron-down prompt-chevron" aria-hidden="true"></i>
+        </div>
+        <div class="prompt-body">
+          <div class="prompt-text-box" id="t3">Tenía este indicador en el modelo anterior y quiero convertirlo al nuevo modelo de Resultados Clave: <span class="placeholder">[pega el indicador actual]</span>. Soy <span class="placeholder">[escribe tu puesto]</span> del área de <span class="placeholder">[escribe tu área]</span>.</div>
+          <button class="copy-btn" onclick="copyPrompt('t3', this)">
+            <i class="ti ti-copy" aria-hidden="true"></i>
+            Copiar mensaje
+          </button>
+          <p class="tip-note">El agente analizará si debe convertirse en un Resultado Clave (KR) o en un indicador de piso operativo (Baseline).</p>
+        </div>
+      </div>
+
+      <div class="prompt-card" id="p4">
+        <div class="prompt-header" onclick="toggleCard('p4')">
+          <div class="prompt-tag-wrap">
+            <div class="prompt-icon"><i class="ti ti-building" aria-hidden="true"></i></div>
+            <div class="prompt-title">Necesito definir mi indicador de piso operativo (Baseline)</div>
+          </div>
+          <i class="ti ti-chevron-down prompt-chevron" aria-hidden="true"></i>
+        </div>
+        <div class="prompt-body">
+          <div class="prompt-text-box" id="t4">Necesito definir el indicador de piso operativo (Baseline) de mi puesto. Soy <span class="placeholder">[escribe tu puesto]</span> del área de <span class="placeholder">[escribe tu área]</span>. Mis actividades recurrentes más importantes son: <span class="placeholder">[describe brevemente tu operación diaria]</span>.</div>
+          <button class="copy-btn" onclick="copyPrompt('t4', this)">
+            <i class="ti ti-copy" aria-hidden="true"></i>
+            Copiar mensaje
+          </button>
+          <p class="tip-note">El Baseline mide el piso mínimo de tu puesto, no proyectos. El agente te guía para definirlo bien. Aplica a puestos con operación diaria recurrente (N1–N6).</p>
+        </div>
+      </div>
+
+      <div class="prompt-card" id="p5">
+        <div class="prompt-header" onclick="toggleCard('p5')">
+          <div class="prompt-tag-wrap">
+            <div class="prompt-icon"><i class="ti ti-school" aria-hidden="true"></i></div>
+            <div class="prompt-title">Quiero practicar aunque no tenga el objetivo de mi líder</div>
+          </div>
+          <i class="ti ti-chevron-down prompt-chevron" aria-hidden="true"></i>
+        </div>
+        <div class="prompt-body">
+          <div class="prompt-text-box" id="t5">Quiero hacer un ejercicio de práctica para aprender a construir Resultados Clave. Soy <span class="placeholder">[escribe tu puesto]</span> del área de <span class="placeholder">[escribe tu área]</span>. Todavía no tengo el objetivo que me comunicará mi líder.</div>
+          <button class="copy-btn" onclick="copyPrompt('t5', this)">
+            <i class="ti ti-copy" aria-hidden="true"></i>
+            Copiar mensaje
+          </button>
+          <p class="tip-note">El agente entrará en modo simulación. Ten en cuenta que este ejercicio no sustituye la validación real con tu líder.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section">
+    <div class="section-label">Qué recibirás</div>
+    <h2>El agente siempre entrega esto al terminar</h2>
+    <div class="output-grid">
+      <div class="output-item">
+        <div class="output-icon"><i class="ti ti-flag" aria-hidden="true"></i></div>
+        <div class="output-title">Objetivo validado</div>
+        <div class="output-desc">Redactado como estado deseado, no como actividad. Con tipo identificado.</div>
+      </div>
+      <div class="output-item">
+        <div class="output-icon"><i class="ti ti-chart-line" aria-hidden="true"></i></div>
+        <div class="output-title">Resultado Clave (KR)</div>
+        <div class="output-desc">Con métrica, meta y fecha de corte. Redacción SMART verificada.</div>
+      </div>
+      <div class="output-item">
+        <div class="output-icon"><i class="ti ti-adjustments-horizontal" aria-hidden="true"></i></div>
+        <div class="output-title">Rangos de clasificación</div>
+        <div class="output-desc">Sobresaliente, Esperado, Deficiente y Cero. Sin traslapes entre rangos.</div>
+      </div>
+      <div class="output-item">
+        <div class="output-icon"><i class="ti ti-circle-check" aria-hidden="true"></i></div>
+        <div class="output-title">Evaluación de calidad</div>
+        <div class="output-desc">Revisión por cada criterio SMART con observaciones y señales de riesgo.</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section">
+    <div class="section-label">Cómo sacarle más provecho</div>
+    <h2>Consejos para una buena conversación</h2>
+    <ul class="rules-list">
+      <li class="rule-item">
+        <i class="ti ti-check" aria-hidden="true"></i>
+        <span>Responde con lo que realmente sabes. Si algo no lo tienes claro, dilo — el agente te ayuda a encontrarlo.</span>
+      </li>
+      <li class="rule-item">
+        <i class="ti ti-check" aria-hidden="true"></i>
+        <span>Si el agente dice que algo parece una actividad y no un resultado, no lo tomes como crítica — es parte de la metodología y el punto más valioso de la conversación.</span>
+      </li>
+      <li class="rule-item">
+        <i class="ti ti-check" aria-hidden="true"></i>
+        <span>Una vez que el agente propone una redacción, puedes ajustarla. Dile "cámbialo a..." o "prefiero que diga..." y lo adapta.</span>
+      </li>
+      <li class="rule-item">
+        <i class="ti ti-check" aria-hidden="true"></i>
+        <span>El agente no aprueba tus objetivos — eso lo hace tu líder. El agente garantiza que la calidad metodológica sea alta antes de que se la presentes.</span>
+      </li>
+      <li class="rule-item">
+        <i class="ti ti-check" aria-hidden="true"></i>
+        <span>Puedes hacer varios Resultados Clave en una misma sesión. Al terminar uno, indícale que quieres construir el siguiente.</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="cta-section">
+    <h2>Listo para empezar</h2>
+    <p>Ten a la mano el objetivo que te comunicó tu líder y abre el agente.</p>
+    <a href="https://gemini.google.com/gem/1W7ICt3efe12XFaQRDFqCVti56BmkDe5j?usp=sharing" target="_blank" class="cta-btn">
+      <i class="ti ti-external-link" aria-hidden="true"></i>
+      Abrir el agente IA
+    </a>
+  </div>
+
+</div>
+
+<script>
+function toggleCard(id) {
+  const card = document.getElementById(id);
+  card.classList.toggle('open');
+}
+
+function copyPrompt(textboxId, btn) {
+  const box = document.getElementById(textboxId);
+  const text = box.innerText;
+  navigator.clipboard.writeText(text).then(() => {
+    btn.classList.add('copied');
+    const original = btn.innerHTML;
+    btn.innerHTML = '<i class="ti ti-check" aria-hidden="true"></i> Copiado';
+    setTimeout(() => {
+      btn.classList.remove('copied');
+      btn.innerHTML = original;
+    }, 2000);
+  });
+}
+</script>
+
+</body>
+</html>
