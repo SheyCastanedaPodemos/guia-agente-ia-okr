@@ -9,62 +9,65 @@
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 15px; line-height: 1.65; color: #1a1a1a; background: #f5f5f3; min-height: 100vh; }
 
-  .hero { background: #1A3C2E; color: #fff; padding: 2.5rem 2rem 2rem; }
-  .hero-tag { display: inline-block; background: rgba(255,255,255,0.12); color: #9FE1CB; font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 10px; border-radius: 20px; margin-bottom: 1rem; }
+  .hero { background: #6b9a02; color: #fff; padding: 2.5rem 2rem 2rem; }
+  .hero-tag { display: inline-block; background: rgba(255,255,255,0.12); color: #cccccc; font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 10px; border-radius: 20px; margin-bottom: 1rem; }
   .hero h1 { font-size: 24px; font-weight: 500; line-height: 1.3; margin-bottom: 0.75rem; color: #fff; }
   .hero p { font-size: 14px; color: rgba(255,255,255,0.7); max-width: 560px; line-height: 1.6; }
-  .hero-btn { display: inline-flex; align-items: center; gap: 8px; margin-top: 1.5rem; background: #1D9E75; color: #fff; text-decoration: none; font-size: 14px; font-weight: 500; padding: 10px 20px; border-radius: 8px; transition: background 0.15s; }
-  .hero-btn:hover { background: #0F6E56; }
+  .hero-btn { display: inline-flex; align-items: center; gap: 8px; margin-top: 1.5rem; background: #6b9a02; color: #fff; text-decoration: none; font-size: 14px; font-weight: 500; padding: 10px 20px; border-radius: 8px; transition: background 0.15s; }
+  .hero-btn:hover { background: #454446; }
 
   .main { max-width: 720px; margin: 0 auto; padding: 2rem 1.5rem 3rem; }
 
   .section { margin-bottom: 2.5rem; }
-  .section-label { font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #0F6E56; margin-bottom: 0.75rem; }
+  .section-label { font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #333333; margin-bottom: 0.75rem; }
   .section h2 { font-size: 18px; font-weight: 500; margin-bottom: 1rem; color: #1a1a1a; }
 
-  /* MYR banner */
-  .myr-banner { background: #E1F5EE; border: 0.5px solid #5DCAA5; border-left: 3px solid #1D9E75; border-radius: 0 10px 10px 0; padding: 1rem 1.25rem; margin-bottom: 1.5rem; }
-  .myr-banner .myr-label { font-size: 11px; font-weight: 500; letter-spacing: 0.07em; text-transform: uppercase; color: #0F6E56; margin-bottom: 0.3rem; }
-  .myr-banner p { font-size: 13px; color: #085041; line-height: 1.55; }
+  /* RMA banner */
+  .myr-banner { background: #f5f5f5; border: 0.5px solid #5DCAA5; border-left: 3px solid #6b9a02; border-radius: 0 10px 10px 0; padding: 1rem 1.25rem; margin-bottom: 1.5rem; box-shadow: 0 1px 3px rgba(0,0,0,0.03); }
+  .myr-banner .myr-label { font-size: 11px; font-weight: 500; letter-spacing: 0.07em; text-transform: uppercase; color: #6b9a02; margin-bottom: 0.3rem; }
+  .myr-banner p { font-size: 13px; color: #333333; line-height: 1.55; }
 
   .prereq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
   @media (max-width: 520px) { .prereq-grid { grid-template-columns: 1fr; } }
 
-  .prereq-card { background: #E1F5EE; border: 0.5px solid #5DCAA5; border-radius: 10px; padding: 1rem 1.25rem; }
-  .prereq-card.highlight { background: #EAF3DE; border-color: #97C459; }
-  .prereq-card .num { font-size: 28px; font-weight: 500; color: #0F6E56; line-height: 1; margin-bottom: 0.5rem; }
-  .prereq-card.highlight .num { color: #3B6D11; }
-  .prereq-card .title { font-size: 13px; font-weight: 500; color: #085041; margin-bottom: 0.25rem; }
-  .prereq-card.highlight .title { color: #27500A; }
-  .prereq-card .desc { font-size: 13px; color: #0F6E56; line-height: 1.5; }
-  .prereq-card.highlight .desc { color: #3B6D11; }
+  .prereq-card { background: #f5f5f5; border: 0.5px solid #5DCAA5; border-radius: 10px; padding: 1rem 1.25rem; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+  .prereq-card.highlight { background: #f8f8f8; border-color: #454446; }
+  .prereq-card .num { font-size: 28px; font-weight: 500; color: #333333; line-height: 1; margin-bottom: 0.5rem; }
+  .prereq-card.highlight .num { color: #333333; }
+  .prereq-card .title { font-size: 13px; font-weight: 500; color: #333333; margin-bottom: 0.25rem; }
+  .prereq-card.highlight .title { color: #333333; }
+  .prereq-card .desc { font-size: 13px; color: #333333; line-height: 1.5; }
+  .prereq-card.highlight .desc { color: #333333; }
 
-  .alert { background: #FAEEDA; border: 0.5px solid #FAC775; border-radius: 8px; padding: 0.75rem 1rem; margin-top: 0.75rem; font-size: 13px; color: #633806; display: flex; gap: 8px; align-items: flex-start; }
-  .alert i { margin-top: 1px; flex-shrink: 0; color: #854F0B; }
+  .alert { background: #f0f0f0; border: 0.5px solid #9d9c9e; border-radius: 8px; padding: 0.75rem 1rem; margin-top: 0.75rem; font-size: 13px; color: #454446; display: flex; gap: 8px; align-items: flex-start; }
+  .alert i { margin-top: 1px; flex-shrink: 0; color: #454446; }
 
-  .steps-list { list-style: none; display: flex; flex-direction: column; gap: 0; }
-  .step { display: flex; gap: 16px; align-items: flex-start; padding: 1rem 0; border-bottom: 0.5px solid #e8e8e4; }
-  .step:last-child { border-bottom: none; }
-  .step-num { width: 28px; height: 28px; border-radius: 50%; background: #1A3C2E; color: #fff; font-size: 12px; font-weight: 500; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
-  .step-body {}
-  .step-title { font-size: 14px; font-weight: 500; color: #1a1a1a; margin-bottom: 0.25rem; }
+  /* Steps timeline */
+  .steps-timeline { display: flex; flex-direction: column; gap: 0; position: relative; margin-bottom: 1rem; }
+  .steps-timeline::before { content: ''; position: absolute; left: 13px; top: 14px; bottom: 14px; width: 2px; background: #f5f5f5; }
+  .step { display: flex; gap: 16px; align-items: flex-start; padding: 0.875rem 0; position: relative; }
+  .step-num { width: 28px; height: 28px; border-radius: 50%; background: #6b9a02; color: #fff; font-size: 12px; font-weight: 500; display: flex; align-items: center; justify-content: center; flex-shrink: 0; z-index: 1; }
+  .step-body { background: #fff; border: 0.5px solid #e8e8e4; border-radius: 10px; padding: 0.875rem 1rem; flex: 1; box-shadow: 0 1px 2px rgba(0,0,0,0.03); }
+  .step-body:hover { border-color: #5DCAA5; }
+  .step-title { font-size: 13px; font-weight: 500; color: #1a1a1a; margin-bottom: 0.25rem; }
   .step-desc { font-size: 13px; color: #555; line-height: 1.55; }
-  .step-ask { margin-top: 0.5rem; padding: 0.5rem 0.75rem; background: #f5f5f3; border-left: 2px solid #1D9E75; border-radius: 0 6px 6px 0; font-size: 12px; color: #444; font-style: italic; }
+  .step-ask { margin-top: 0.5rem; padding: 0.5rem 0.75rem; background: #f5f5f3; border-left: 2px solid #454446; border-radius: 0 6px 6px 0; font-size: 12px; color: #444; font-style: italic; }
+  .steps-list { list-style: none; display: flex; flex-direction: column; gap: 0; }
 
   .prompts-intro { font-size: 14px; color: #555; margin-bottom: 1.25rem; line-height: 1.6; }
   .prompt-cards { display: flex; flex-direction: column; gap: 12px; }
   .prompt-card { background: #fff; border: 0.5px solid #d8d8d4; border-radius: 10px; overflow: hidden; transition: border-color 0.15s; }
   .prompt-card:hover { border-color: #5DCAA5; }
-  .prompt-card.featured { border-color: #97C459; }
+  .prompt-card.featured { border-color: #454446; }
 
   .prompt-header { display: flex; align-items: center; justify-content: space-between; padding: 0.75rem 1rem; cursor: pointer; user-select: none; }
   .prompt-tag-wrap { display: flex; align-items: center; gap: 10px; }
-  .prompt-icon { width: 32px; height: 32px; border-radius: 8px; background: #E1F5EE; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-  .prompt-icon.green { background: #EAF3DE; }
-  .prompt-icon i { color: #0F6E56; font-size: 16px; }
-  .prompt-icon.green i { color: #3B6D11; }
+  .prompt-icon { width: 32px; height: 32px; border-radius: 8px; background: #f5f5f5; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .prompt-icon.green { background: #f8f8f8; }
+  .prompt-icon i { color: #333333; font-size: 16px; }
+  .prompt-icon.green i { color: #333333; }
   .prompt-title { font-size: 14px; font-weight: 500; color: #1a1a1a; }
-  .prompt-badge { font-size: 10px; font-weight: 500; padding: 2px 7px; border-radius: 4px; background: #EAF3DE; color: #3B6D11; border: 0.5px solid #97C459; margin-left: 6px; }
+  .prompt-badge { font-size: 10px; font-weight: 500; padding: 2px 7px; border-radius: 4px; background: #f8f8f8; color: #333333; border: 0.5px solid #454446; margin-left: 6px; }
   .prompt-chevron { color: #999; font-size: 16px; transition: transform 0.2s; }
   .prompt-card.open .prompt-chevron { transform: rotate(180deg); }
 
@@ -72,39 +75,75 @@
   .prompt-card.open .prompt-body { display: block; }
 
   .prompt-text-box { background: #f7f7f5; border: 0.5px solid #d8d8d4; border-radius: 8px; padding: 0.75rem 1rem; font-size: 13px; color: #222; line-height: 1.6; position: relative; }
-  .prompt-text-box .placeholder { color: #1D9E75; font-weight: 500; }
+  .prompt-text-box .placeholder { color: #454446; font-weight: 500; }
   .copy-btn { display: inline-flex; align-items: center; gap: 6px; margin-top: 0.75rem; background: transparent; border: 0.5px solid #c8c8c4; border-radius: 6px; padding: 6px 12px; font-size: 12px; color: #555; cursor: pointer; transition: all 0.15s; }
-  .copy-btn:hover { border-color: #1D9E75; color: #0F6E56; }
-  .copy-btn.copied { border-color: #1D9E75; color: #0F6E56; background: #E1F5EE; }
+  .copy-btn:hover { border-color: #454446; color: #333333; }
+  .copy-btn.copied { border-color: #454446; color: #333333; background: #f5f5f5; }
   .copy-btn i { font-size: 14px; }
   .tip-note { font-size: 12px; color: #888; margin-top: 0.5rem; font-style: italic; }
 
   .output-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; }
-  .output-item { background: #fff; border: 0.5px solid #d8d8d4; border-radius: 8px; padding: 0.875rem 1rem; }
-  .output-icon { color: #1D9E75; font-size: 18px; margin-bottom: 0.4rem; }
+  .output-item { background: #fff; border: 0.5px solid #d8d8d4; border-radius: 8px; padding: 0.875rem 1rem; box-shadow: 0 1px 2px rgba(0,0,0,0.03); }
+  .output-icon { color: #454446; font-size: 18px; margin-bottom: 0.4rem; }
   .output-title { font-size: 13px; font-weight: 500; color: #1a1a1a; margin-bottom: 0.2rem; }
   .output-desc { font-size: 12px; color: #777; line-height: 1.45; }
 
   .rules-list { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-top: 0.75rem; }
   .rule-item { display: flex; gap: 10px; align-items: flex-start; font-size: 13px; color: #444; }
-  .rule-item i { color: #1D9E75; font-size: 15px; margin-top: 1px; flex-shrink: 0; }
+  .rule-item i { color: #454446; font-size: 15px; margin-top: 1px; flex-shrink: 0; }
 
   .divider { border: none; border-top: 0.5px solid #e0e0da; margin: 2rem 0; }
 
-  .cta-section { background: #1A3C2E; border-radius: 12px; padding: 1.75rem 1.5rem; text-align: center; }
+  .cta-section { background: #6b9a02; border-radius: 12px; padding: 1.75rem 1.5rem; text-align: center; }
   .cta-section h2 { font-size: 18px; font-weight: 500; color: #fff; margin-bottom: 0.5rem; }
   .cta-section p { font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 1.25rem; }
-  .cta-btn { display: inline-flex; align-items: center; gap: 8px; background: #1D9E75; color: #fff; text-decoration: none; font-size: 14px; font-weight: 500; padding: 11px 24px; border-radius: 8px; transition: background 0.15s; }
-  .cta-btn:hover { background: #0F6E56; }
+  .cta-btn { display: inline-flex; align-items: center; gap: 8px; background: #6b9a02; color: #fff; text-decoration: none; font-size: 14px; font-weight: 500; padding: 11px 24px; border-radius: 8px; transition: background 0.15s; }
+  .cta-btn:hover { background: #454446; }
+  /* Niveles config cards */
+  .niveles-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 1.25rem; }
+  @media(max-width:520px){ .niveles-grid { grid-template-columns: 1fr; } }
+  .nivel-card { background: #fff; border: .5px solid #d8d8d4; border-radius: 10px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+  .nivel-card-header { padding: .75rem 1rem; display: flex; align-items: center; justify-content: space-between; }
+  .nivel-card-header.dir { background: #6b9a02; }
+  .nivel-card-header.ger { background: #8f3b8e; }
+  .nivel-card-header.coo { background: #8f3b8e; }
+  .nivel-card-header.con { background: #454446; }
+  .nivel-card-role { font-size: 13px; font-weight: 500; color: #fff; }
+  .nivel-card-badge { font-size: 11px; font-weight: 500; padding: 3px 8px; border-radius: 4px; background: rgba(255,255,255,0.2); color: #fff; }
+  .nivel-card-body { padding: .875rem 1rem; }
+  .nivel-reqs { list-style: none; display: flex; flex-direction: column; gap: 5px; margin-bottom: .75rem; }
+  .nivel-req { font-size: 12px; color: #444; display: flex; gap: 6px; align-items: flex-start; line-height: 1.4; }
+  .nivel-req::before { content: '·'; color: #454446; font-weight: 700; flex-shrink: 0; }
+  .smart-row { display: flex; gap: 5px; flex-wrap: wrap; margin-top: .5rem; }
+  .smart-pill { font-size: 10px; font-weight: 600; padding: 2px 7px; border-radius: 4px; background: #f5f5f5; color: #333333; border: .5px solid #5DCAA5; }
+
+  /* SMART explainer */
+  .smart-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; margin-bottom: 1rem; }
+  @media(max-width:500px){ .smart-grid { grid-template-columns: repeat(2, 1fr); } }
+  .smart-card { background: #fff; border: .5px solid #d8d8d4; border-radius: 8px; padding: .75rem .875rem; text-align: center; }
+  .smart-letter { font-size: 22px; font-weight: 700; color: #6b9a02; line-height: 1; margin-bottom: 4px; }
+  .smart-word { font-size: 11px; font-weight: 600; color: #333333; margin-bottom: 3px; }
+  .smart-desc { font-size: 11px; color: #666; line-height: 1.4; }
+
+  .ranges-note-box { background: #f0f0f0; border: .5px solid #9d9c9e; border-left: 3px solid #9d9c9e; border-radius: 0 8px 8px 0; padding: .75rem 1rem; font-size: 13px; color: #454446; margin-top: .75rem; }
+
+  /* Decision tag */
+  .decision-tag { display: flex; align-items: flex-start; gap: 6px; margin-top: .75rem; padding: .6rem .75rem; border-radius: 8px; font-size: 12px; font-weight: 500; line-height: 1.4; }
+  .decision-tag i { font-size: 14px; margin-top: 1px; flex-shrink: 0; }
+  .decision-tag--dir { background: #EAF3DE; color: #3B6D11; border: .5px solid #97C459; }
+  .decision-tag--purple { background: #f5e8f5; color: #6b2a6a; border: .5px solid #c49bc3; }
+  .decision-tag--con { background: #f0f0f0; color: #454446; border: .5px solid #9d9c9e; }
+
+  .decision-note { font-size: 11px; color: #888; font-style: italic; margin-top: .35rem; margin-left: .1rem; }
 </style>
 </head>
 <body>
 
 <div class="hero">
   <div style="max-width:720px; margin:0 auto;">
-    <div class="hero-tag">Mid Year Review 2026 · Herramienta de apoyo</div>
+    <div class="hero-tag">Revisión de Medio Año 2026 · Herramienta de apoyo</div>
     <h1>Diseñador Estratégico de Objetivos y Resultados Clave</h1>
-    <p>Un agente de inteligencia artificial que te ayuda a construir, validar y afinar tus Objetivos (O) y Resultados Clave (KRs) para el nuevo modelo trimestral de Podemos Progresar — como parte del Mid Year Review 2026.</p>
+    <p>Un agente de inteligencia artificial que te ayuda a construir, validar y afinar tus Objetivos (O) y Resultados Clave (KRs) para el nuevo modelo trimestral de Podemos Progresar — como parte de la Revisión de Medio Año 2026.</p>
     <a href="https://gemini.google.com/gem/1W7ICt3efe12XFaQRDFqCVti56BmkDe5j?usp=sharing" target="_blank" class="hero-btn">
       <i class="ti ti-external-link" aria-hidden="true"></i>
       Abrir el agente
@@ -118,7 +157,7 @@
     <div class="section-label">Contexto</div>
     <h2>Por qué existe este agente</h2>
     <div class="myr-banner">
-      <div class="myr-label">Mid Year Review 2026</div>
+      <div class="myr-label">Revisión de Medio Año 2026</div>
       <p>Como parte de la Revisión de Medio Año de Podemos, este trimestre cada socio define sus objetivos bajo el nuevo modelo OKR. El agente te ayuda a hacerlo bien — garantizando que tus objetivos sean estratégicos (no actividades) y que tus KRs sean medibles, retadores y sin rangos que se traslapen.</p>
     </div>
   </div>
@@ -147,50 +186,228 @@
   <hr class="divider">
 
   <div class="section">
+    <div class="section-label">Tu configuración según tu rol</div>
+    <h2>Qué necesitas construir — por nivel</h2>
+    <p style="font-size:14px;color:#555;margin-bottom:1.25rem;line-height:1.6;">El agente identifica tu configuración automáticamente desde el catálogo de puestos en cuanto le dices tu puesto. Aquí un resumen para que llegues preparado.</p>
+
+    <div class="niveles-grid">
+      <div class="nivel-card">
+        <div class="nivel-card-header dir">
+          <span class="nivel-card-role">Directores</span>
+          <span class="nivel-card-badge">Mín 5 — Máx 6</span>
+        </div>
+        <div class="nivel-card-body">
+          <ul class="nivel-reqs">
+            <li class="nivel-req">1 OKR de colaboración entre áreas</li>
+            <li class="nivel-req">1 OKR de desarrollo (obligatorio)</li>
+            <li class="nivel-req">3 a 5 OKRs de negocio</li>
+          </ul>
+          <div class="decision-tag decision-tag--dir">
+            <i class="ti ti-key" aria-hidden="true"></i>
+            Tú defines los objetivos estratégicos de tu dirección
+          </div>
+          <div class="decision-note">Tu líder directo te lo valida antes de cerrar tu definición.</div>
+        </div>
+      </div>
+
+      <div class="nivel-card">
+        <div class="nivel-card-header ger">
+          <span class="nivel-card-role">Subdirectores y Gerentes</span>
+          <span class="nivel-card-badge">Mín 4 — Máx 5</span>
+        </div>
+        <div class="nivel-card-body">
+          <ul class="nivel-reqs">
+            <li class="nivel-req">1 OKR de colaboración entre áreas</li>
+            <li class="nivel-req">1 OKR de desarrollo (obligatorio)</li>
+            <li class="nivel-req">2 a 3 OKRs de negocio</li>
+          </ul>
+          <div class="decision-tag decision-tag--purple">
+            <i class="ti ti-key" aria-hidden="true"></i>
+            Tú defines los objetivos de tu área a cargo, partiendo de la alineación de objetivos de tu dirección
+          </div>
+          <div class="decision-note">Tu líder directo te lo valida antes de cerrar tu definición.</div>
+        </div>
+      </div>
+
+      <div class="nivel-card">
+        <div class="nivel-card-header coo">
+          <span class="nivel-card-role">Coordinadores y Líderes</span>
+          <span class="nivel-card-badge">Mín 3 — Máx 4</span>
+        </div>
+        <div class="nivel-card-body">
+          <ul class="nivel-reqs">
+            <li class="nivel-req">1 OKR de colaboración entre áreas</li>
+            <li class="nivel-req">1 OKR de desarrollo (obligatorio)</li>
+            <li class="nivel-req">1 a 2 OKRs de negocio</li>
+          </ul>
+          <div class="decision-tag decision-tag--purple">
+            <i class="ti ti-key" aria-hidden="true"></i>
+            Tú defines los objetivos de tu área o departamento a cargo, partiendo de la alineación de objetivos que te comunicó tu líder directo
+          </div>
+          <div class="decision-note">Tu líder directo te lo valida antes de cerrar tu definición.</div>
+        </div>
+      </div>
+
+      <div class="nivel-card">
+        <div class="nivel-card-header con">
+          <span class="nivel-card-role">Contribuidor Individual</span>
+          <span class="nivel-card-badge">Mín 3 — Máx 4</span>
+        </div>
+        <div class="nivel-card-body">
+          <ul class="nivel-reqs">
+            <li class="nivel-req"><strong>1 a 2 Baseline</strong> — piso operativo mínimo del puesto que no puede detenerse</li>
+            <li class="nivel-req">1 KR de desarrollo (obligatorio)</li>
+            <li class="nivel-req">1 KR de colaboración (la elige la dirección, no el socio)</li>
+          </ul>
+          <div class="decision-tag decision-tag--con">
+            <i class="ti ti-arrow-down-circle" aria-hidden="true"></i>
+            Tu Objetivo viene de tu líder directo
+          </div>
+          <div class="decision-note">Tu líder directo te lo valida antes de cerrar tu definición.</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:1.25rem;">
+      <div style="background:#EAF3DE;border:.5px solid #97C459;border-radius:10px;padding:.875rem 1rem;">
+        <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:#3B6D11;margin-bottom:.4rem;">Un buen Objetivo</div>
+        <div style="font-size:13px;color:#27500A;line-height:1.5;">Describe un estado deseado, no una actividad. Es cualitativo, retador y acotado al trimestre.</div>
+      </div>
+      <div style="background:#f5f5f5;border:.5px solid #5DCAA5;border-radius:10px;padding:.875rem 1rem;">
+        <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:#0F6E56;margin-bottom:.4rem;">Un buen KR</div>
+        <div style="font-size:13px;color:#333333;line-height:1.5;">Se construye con SMART, tiene meta y fecha de corte, y sus 4 rangos (Cero / Deficiente / Esperado / Sobresaliente) no se traslapan.</div>
+      </div>
+    </div>
+
+    <p style="font-size:13px;font-weight:500;color:#1a1a1a;margin-bottom:.75rem;">Los KRs se construyen con SMART</p>
+    <div class="smart-grid">
+      <div class="smart-card">
+        <div class="smart-letter">S</div>
+        <div class="smart-word">Específico</div>
+        <div class="smart-desc">Describe exactamente qué va a cambiar o mejorar.</div>
+      </div>
+      <div class="smart-card">
+        <div class="smart-letter">M</div>
+        <div class="smart-word">Medible</div>
+        <div class="smart-desc">Tiene un número, porcentaje o dato que cualquiera puede verificar.</div>
+      </div>
+      <div class="smart-card">
+        <div class="smart-letter">A</div>
+        <div class="smart-word">Alcanzable</div>
+        <div class="smart-desc">Retador pero posible de lograr en el trimestre.</div>
+      </div>
+      <div class="smart-card">
+        <div class="smart-letter">R</div>
+        <div class="smart-word">Relevante</div>
+        <div class="smart-desc">Conectado directamente al Objetivo del área o dirección.</div>
+      </div>
+      <div class="smart-card">
+        <div class="smart-letter">T</div>
+        <div class="smart-word">Temporal</div>
+        <div class="smart-desc">Tiene una fecha de corte explícita (ej. al 25 de septiembre).</div>
+      </div>
+    </div>
+    <div class="ranges-note-box">
+      <strong>Regla de rangos:</strong> cada KR necesita 4 rangos sin traslape (Cero / Deficiente / Esperado / Sobresaliente). La meta siempre es el límite superior del rango Esperado. El agente te ayuda a construirlos correctamente.
+    </div>
+  </div>
+
+
+  <hr class="divider">
+
+  <div class="section">
+    <div class="section-label">Tipos de objetivos</div>
+    <h2>Qué tipo de objetivo vas a construir</h2>
+    <p style="font-size:14px;color:#555;margin-bottom:1rem;line-height:1.6;">El agente te preguntará el tipo de objetivo antes de construir el KR. Estos son los tres tipos con sus pesos mínimos obligatorios.</p>
+
+    <div style="border:.5px solid #d8d8d4;border-radius:10px;overflow:hidden;margin-bottom:1rem;">
+      <div style="display:grid;grid-template-columns:1fr 1fr 1.5fr;background:#6b9a02;">
+        <div style="padding:.6rem .875rem;font-size:12px;font-weight:600;color:#fff;">Tipo</div>
+        <div style="padding:.6rem .875rem;font-size:12px;font-weight:600;color:#fff;">Subtipo</div>
+        <div style="padding:.6rem .875rem;font-size:12px;font-weight:600;color:#fff;">¿Qué mide?</div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1.5fr;background:#f5f5f5;border-top:.5px solid #5DCAA5;">
+        <div style="padding:.75rem .875rem;font-size:13px;font-weight:500;color:#333333;border-right:.5px solid #d8d8d4;">Desarrollo (People)<br><span style="font-size:11px;font-weight:700;background:#6b9a02;color:#fff;padding:1px 6px;border-radius:4px;">10% obligatorio</span></div>
+        <div style="padding:.75rem .875rem;font-size:13px;color:#333;border-right:.5px solid #d8d8d4;">Desarrollo individual</div>
+        <div style="padding:.75rem .875rem;font-size:13px;color:#333;">Tu propio crecimiento profesional este trimestre: nuevas capacidades, conocimientos o habilidades que te hacen mejor en tu rol.</div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1.5fr;border-top:.5px solid #d8d8d4;">
+        <div style="padding:.75rem .875rem;font-size:13px;font-weight:500;color:#333333;border-right:.5px solid #d8d8d4;">Negocio (Business)<br><span style="font-size:11px;font-weight:700;background:#a5c614;color:#3d5801;padding:1px 6px;border-radius:4px;">70%</span></div>
+        <div style="font-size:13px;color:#333;border-right:.5px solid #d8d8d4;grid-column:span 2;">
+          <div style="display:grid;grid-template-columns:1fr 1.5fr;border-bottom:.5px solid #f0f0ea;">
+            <div style="padding:.6rem .875rem;color:#333333;font-weight:500;border-right:.5px solid #d8d8d4;">Crecimiento</div>
+            <div style="padding:.6rem .875rem;">Resultados que amplían alcance, cobertura o capacidad de la organización.</div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1.5fr;border-bottom:.5px solid #f0f0ea;">
+            <div style="padding:.6rem .875rem;color:#333333;font-weight:500;border-right:.5px solid #d8d8d4;">Eficiencia</div>
+            <div style="padding:.6rem .875rem;">Mejor uso de recursos, tiempos o costos, sin sacrificar calidad.</div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1.5fr;">
+            <div style="padding:.6rem .875rem;color:#333333;font-weight:500;border-right:.5px solid #d8d8d4;">Transformación</div>
+            <div style="padding:.6rem .875rem;">Cambios estructurales o de innovación que el área lidera.</div>
+          </div>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1.5fr;background:#f5e8f5;border-top:.5px solid #c49bc3;">
+        <div style="padding:.75rem .875rem;font-size:13px;font-weight:500;color:#8f3b8e;border-right:.5px solid #d8d8d4;">Colaboración<br><span style="font-size:11px;font-weight:700;background:#8f3b8e;color:#fff;padding:1px 6px;border-radius:4px;">20% obligatorio</span></div>
+        <div style="padding:.75rem .875rem;font-size:13px;color:#333;border-right:.5px solid #d8d8d4;">Colaboración</div>
+        <div style="padding:.75rem .875rem;font-size:13px;color:#333;">Resultados que solo se logran trabajando junto con otra área — nadie los alcanza en solitario.</div>
+      </div>
+    </div>
+
+    <div class="alert" style="margin-top:0.75rem;">
+      <i class="ti ti-info-circle" aria-hidden="true"></i>
+      <span><strong>Dentro de Negocio (70%) tú eliges el subtipo.</strong> Puedes tener uno o varios objetivos de negocio (Crecimiento, Eficiencia y/o Transformación). Si defines más de uno, el 70% se reparte entre ellos — cada uno con al menos 20%.</span>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section">
     <div class="section-label">Cómo funciona</div>
     <h2>El agente trabaja contigo en pasos</h2>
     <p style="font-size:14px;color:#555;margin-bottom:1rem;">No te entrega algo de golpe. Va haciendo preguntas para entender tu contexto antes de proponer cualquier redacción.</p>
-    <ul class="steps-list">
-      <li class="step">
+    <div class="steps-timeline">
+      <div class="step">
         <div class="step-num">1</div>
         <div class="step-body">
           <div class="step-title">Entiende tu contexto</div>
           <div class="step-desc">Te pide tu puesto, área y el Objetivo de tu dirección. No avanza sin este punto de partida.</div>
           <div class="step-ask">Pregunta típica: "¿Cuál es el Objetivo de tu dirección o área al que debes contribuir este trimestre?"</div>
         </div>
-      </li>
-      <li class="step">
+      </div>
+      <div class="step">
         <div class="step-num">2</div>
         <div class="step-body">
           <div class="step-title">Valida o construye el Objetivo contigo</div>
-          <div class="step-desc">Si el Objetivo que describes suena a actividad ("dar seguimiento a...", "apoyar en..."), el agente te lo señala y te ayuda a reformularlo como un estado deseado real. Para N9–N15 puede ayudarte a construir el Objetivo Estratégico de tu dirección desde cero.</div>
+          <div class="step-desc">Si el Objetivo que describes suena a actividad ("dar seguimiento a...", "apoyar en..."), el agente te lo señala y te ayuda a reformularlo como un estado deseado real. Para directores y gerentes puede ayudarte a construir el Objetivo Estratégico de tu dirección desde cero.</div>
           <div class="step-ask">Pregunta típica: "¿Qué estado deseas que exista en tu área al cierre del Q3 que hoy no existe?"</div>
         </div>
-      </li>
-      <li class="step">
+      </div>
+      <div class="step">
         <div class="step-num">3</div>
         <div class="step-body">
           <div class="step-title">Identifica qué tipo de aportación haces</div>
-          <div class="step-desc">Hay tres tipos: Negocio (crecimiento, eficiencia o transformación), Colaboración entre áreas, y Desarrollo personal. El agente te ayuda a identificar cuál aplica para cada KR.</div>
+          <div class="step-desc">Hay tres tipos: Negocio (crecimiento, eficiencia o transformación), Colaboración entre áreas, y Desarrollo personal. El agente te ayuda a identificar de cuál tipo quieres construir.</div>
           <div class="step-ask">Pregunta típica: "¿Qué tipo de resultado quieres construir: de negocio, de colaboración o de desarrollo?"</div>
         </div>
-      </li>
-      <li class="step">
+      </div>
+      <div class="step">
         <div class="step-num">4</div>
         <div class="step-body">
           <div class="step-title">Construye el Resultado Clave (KR)</div>
           <div class="step-desc">Te ayuda a definir la métrica, la meta, el período y los rangos de clasificación: Sobresaliente, Esperado, Deficiente y Cero. Sin traslapes entre rangos.</div>
           <div class="step-ask">Pregunta típica: "¿Cómo sabrías que lograste este objetivo al 25 de septiembre? ¿Qué se podría medir?"</div>
         </div>
-      </li>
-      <li class="step">
+      </div>
+      <div class="step">
         <div class="step-num">5</div>
         <div class="step-body">
           <div class="step-title">Entrega el resultado validado</div>
           <div class="step-desc">Al terminar recibes el Objetivo, el Resultado Clave con rangos, la evaluación de calidad SMART y observaciones de riesgo si las hay.</div>
         </div>
-      </li>
-    </ul>
+      </div>
+    </div>
   </div>
 
   <hr class="divider">
@@ -198,32 +415,71 @@
   <div class="section">
     <div class="section-label">Por dónde empezar</div>
     <h2>Elige tu situación y copia el mensaje</h2>
-    <p class="prompts-intro">Pega uno de estos mensajes al abrir el agente. Reemplaza los campos en <span style="color:#1D9E75;font-weight:500;">verde</span> con tu información real.</p>
+    <p class="prompts-intro">Pega uno de estos mensajes al abrir el agente. Reemplaza los campos en <span style="color:#454446;font-weight:500;">verde</span> con tu información real.</p>
 
     <div class="prompt-cards">
 
-      <div class="prompt-card featured" id="p0">
-        <div class="prompt-header" onclick="toggleCard('p0')">
+      <div class="prompt-card" id="p5">
+        <div class="prompt-header" onclick="toggleCard('p5')">
+          <div class="prompt-tag-wrap">
+            <div class="prompt-icon"><i class="ti ti-school" aria-hidden="true"></i></div>
+            <div class="prompt-title">Quiero practicar aunque no tenga el Objetivo de mi líder</div>
+          </div>
+          <i class="ti ti-chevron-down prompt-chevron" aria-hidden="true"></i>
+        </div>
+        <div class="prompt-body">
+          <div class="prompt-text-box" id="t5">Quiero hacer un ejercicio de práctica para aprender a construir Resultados Clave. Soy <span class="placeholder">[escribe tu puesto]</span> del área de <span class="placeholder">[escribe tu área]</span>. Todavía no tengo el Objetivo que me comunicará mi líder.</div>
+          <button class="copy-btn" onclick="copyPrompt('t5', this)">
+            <i class="ti ti-copy" aria-hidden="true"></i>
+            Copiar mensaje
+          </button>
+          <p class="tip-note">El agente entrará en modo simulación. Ten en cuenta que este ejercicio no sustituye la validación real con tu líder.</p>
+        </div>
+      </div>
+
+    <div class="prompt-card featured" id="p0a">
+        <div class="prompt-header" onclick="toggleCard('p0a')">
           <div class="prompt-tag-wrap">
             <div class="prompt-icon green"><i class="ti ti-flag" aria-hidden="true"></i></div>
             <div>
-              <span class="prompt-title">Quiero construir el Objetivo de mi área</span>
-              <span class="prompt-badge">N9–N15</span>
+              <span class="prompt-title">Quiero construir los Objetivos de mi dirección</span>
+              <span class="prompt-badge">Directores</span>
             </div>
           </div>
           <i class="ti ti-chevron-down prompt-chevron" aria-hidden="true"></i>
         </div>
         <div class="prompt-body">
-          <div class="prompt-text-box" id="t0">Quiero construir el Objetivo Estratégico de mi dirección para el Q3 2026. Soy <span class="placeholder">[escribe tu puesto]</span> de la dirección de <span class="placeholder">[escribe tu dirección]</span>. Las prioridades que me comunicó DG para este trimestre son: <span class="placeholder">[describe brevemente las prioridades estratégicas que te comunicó DG]</span>.</div>
-          <button class="copy-btn" onclick="copyPrompt('t0', this)">
+          <div class="prompt-text-box" id="t0a">Quiero construir los Objetivos Estratégicos de mi dirección para el Q3 2026. Soy <span class="placeholder">[escribe tu puesto]</span> de la dirección de <span class="placeholder">[escribe tu dirección]</span>. Las prioridades estratégicas que definió Dirección General para este trimestre son: <span class="placeholder">[describe brevemente las prioridades organizacionales de DG]</span>.</div>
+          <button class="copy-btn" onclick="copyPrompt('t0a', this)">
             <i class="ti ti-copy" aria-hidden="true"></i>
             Copiar mensaje
           </button>
-          <p class="tip-note">El agente te ayudará a formular un Objetivo Estratégico que describa un estado deseado — no una actividad. Aplica para directores y gerentes (N9–N15).</p>
+          <p class="tip-note">El agente te ayudará a formular Objetivos Estratégicos que describan un estado deseado — no actividades. Aplica solo para directores.</p>
         </div>
       </div>
 
-      <div class="prompt-card" id="p1">
+    <div class="prompt-card featured" id="p0b">
+        <div class="prompt-header" onclick="toggleCard('p0b')">
+          <div class="prompt-tag-wrap">
+            <div class="prompt-icon green"><i class="ti ti-flag" aria-hidden="true"></i></div>
+            <div>
+              <span class="prompt-title">Quiero construir los Objetivos de mi área</span>
+              <span class="prompt-badge">Cualquier líder</span>
+            </div>
+          </div>
+          <i class="ti ti-chevron-down prompt-chevron" aria-hidden="true"></i>
+        </div>
+        <div class="prompt-body">
+          <div class="prompt-text-box" id="t0b">Quiero construir los Objetivos de mi área para el Q3 2026, derivados de los de mi líder directo. Soy <span class="placeholder">[escribe tu puesto]</span> del área de <span class="placeholder">[escribe tu área]</span>, dirección de <span class="placeholder">[escribe tu dirección]</span>. Los Objetivos que me comunicó mi líder directo para este trimestre son: <span class="placeholder">[describe los Objetivos que te comunicó tu líder directo]</span>.</div>
+          <button class="copy-btn" onclick="copyPrompt('t0b', this)">
+            <i class="ti ti-copy" aria-hidden="true"></i>
+            Copiar mensaje
+          </button>
+          <p class="tip-note">El agente te ayudará a formular Objetivos que describan un estado deseado — no actividades. Aplica para cualquier líder con equipo a cargo (subdirectores, gerentes, coordinadores y líderes).</p>
+        </div>
+      </div>
+
+    <div class="prompt-card" id="p1">
         <div class="prompt-header" onclick="toggleCard('p1')">
           <div class="prompt-tag-wrap">
             <div class="prompt-icon"><i class="ti ti-target" aria-hidden="true"></i></div>
@@ -241,7 +497,7 @@
         </div>
       </div>
 
-      <div class="prompt-card" id="p2">
+    <div class="prompt-card" id="p2">
         <div class="prompt-header" onclick="toggleCard('p2')">
           <div class="prompt-tag-wrap">
             <div class="prompt-icon"><i class="ti ti-checklist" aria-hidden="true"></i></div>
@@ -259,7 +515,7 @@
         </div>
       </div>
 
-      <div class="prompt-card" id="p3">
+    <div class="prompt-card" id="p3">
         <div class="prompt-header" onclick="toggleCard('p3')">
           <div class="prompt-tag-wrap">
             <div class="prompt-icon"><i class="ti ti-refresh" aria-hidden="true"></i></div>
@@ -268,7 +524,7 @@
           <i class="ti ti-chevron-down prompt-chevron" aria-hidden="true"></i>
         </div>
         <div class="prompt-body">
-          <div class="prompt-text-box" id="t3">Tenía este indicador en el modelo anterior y quiero convertirlo al nuevo modelo de Resultados Clave: <span class="placeholder">[pega el indicador actual]</span>. Soy <span class="placeholder">[escribe tu puesto]</span> del área de <span class="placeholder">[escribe tu área]</span>. El Objetivo de mi área este Q es: <span class="placeholder">[escribe el Objetivo]</span>.</div>
+          <div class="prompt-text-box" id="t3">Tenía este indicador en el modelo anterior y quiero convertirlo al nuevo modelo de OKRs: <span class="placeholder">[pega el indicador actual]</span>. Soy <span class="placeholder">[escribe tu puesto]</span> del área de <span class="placeholder">[escribe tu área]</span>. El Objetivo de mi área este Q es: <span class="placeholder">[escribe el Objetivo]</span>.</div>
           <button class="copy-btn" onclick="copyPrompt('t3', this)">
             <i class="ti ti-copy" aria-hidden="true"></i>
             Copiar mensaje
@@ -277,7 +533,7 @@
         </div>
       </div>
 
-      <div class="prompt-card" id="p4">
+    <div class="prompt-card" id="p4">
         <div class="prompt-header" onclick="toggleCard('p4')">
           <div class="prompt-tag-wrap">
             <div class="prompt-icon"><i class="ti ti-building" aria-hidden="true"></i></div>
@@ -291,25 +547,7 @@
             <i class="ti ti-copy" aria-hidden="true"></i>
             Copiar mensaje
           </button>
-          <p class="tip-note">El Baseline mide el piso mínimo de tu puesto, no proyectos. El agente te guía para definirlo bien. Aplica a puestos con operación diaria recurrente (N1–N6).</p>
-        </div>
-      </div>
-
-      <div class="prompt-card" id="p5">
-        <div class="prompt-header" onclick="toggleCard('p5')">
-          <div class="prompt-tag-wrap">
-            <div class="prompt-icon"><i class="ti ti-school" aria-hidden="true"></i></div>
-            <div class="prompt-title">Quiero practicar aunque no tenga el Objetivo de mi líder</div>
-          </div>
-          <i class="ti ti-chevron-down prompt-chevron" aria-hidden="true"></i>
-        </div>
-        <div class="prompt-body">
-          <div class="prompt-text-box" id="t5">Quiero hacer un ejercicio de práctica para aprender a construir Resultados Clave. Soy <span class="placeholder">[escribe tu puesto]</span> del área de <span class="placeholder">[escribe tu área]</span>. Todavía no tengo el Objetivo que me comunicará mi líder.</div>
-          <button class="copy-btn" onclick="copyPrompt('t5', this)">
-            <i class="ti ti-copy" aria-hidden="true"></i>
-            Copiar mensaje
-          </button>
-          <p class="tip-note">El agente entrará en modo simulación. Ten en cuenta que este ejercicio no sustituye la validación real con tu líder.</p>
+          <p class="tip-note">El Baseline mide el piso mínimo de tu puesto, no proyectos. El agente te guía para definirlo bien. Aplica únicamente a Contribuidores Individuales — especialistas, analistas y auxiliares.</p>
         </div>
       </div>
 
